@@ -15,7 +15,8 @@ public class AccountController(DataContext context, ITokenService tokenService) 
     public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
     {
         if(await UserExists(registerDto.Username)) return BadRequest("User already exist");
-        using var hmac = new HMACSHA512();
+        return Ok();
+       /* using var hmac = new HMACSHA512();
 
         var user = new AppUser
         {
@@ -30,7 +31,7 @@ public class AccountController(DataContext context, ITokenService tokenService) 
             Username = user.UserName,
             Token = tokenService.CreateToken(user)
 
-        };
+        };*/
     }
 
     [HttpPost("login")]
