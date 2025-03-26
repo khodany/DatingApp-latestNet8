@@ -77,8 +77,9 @@
 
  </tab>
  <tab heading="Edit photos">
-    <h4>Interests</h4>
-    <p>Phot edit will go here </p>
+    <app-photo-editor [member]="member"
+    (memberChange)="onMemebrChange($event)"
+    ></app-photo-editor>
  </tab>
     </tabset>
 </div>    
